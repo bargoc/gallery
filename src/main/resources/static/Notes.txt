@@ -13,3 +13,13 @@ Odblokowałam JPA w pom.xml
 Zerwanie połączenia z serwerem to crl +
 Wyczyszczenie terminala to clear
 
+basia@MacBook-Pro-Basia gallery % git add .
+basia@MacBook-Pro-Basia gallery % git commit -m "poprawki application.properties po odblokowaniu JPA"
+
+basia@MacBook-Pro-Basia gallery % git remote add origin
+basia@MacBook-Pro-Basia gallery % git push -u origin main
+Zadziałało bezbłędnie.
+
+
+
+
