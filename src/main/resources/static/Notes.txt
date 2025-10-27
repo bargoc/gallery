@@ -1,3 +1,15 @@
 basia@MacBook-Pro-Basia ~ % cd /usr/local/mysql-8.0.23-macos10.15-x86_64/bin 
 basia@MacBook-Pro-Basia bin % ./mysql -u root -p
 mysql> create database hanka;
+
+basia@MacBook-Pro-Basia gallery % git add .
+basia@MacBook-Pro-Basia gallery % git commit -m "konfiguracja application.properties"
+basia@MacBook-Pro-Basia gallery % git status
+
+git branch
+
+Odblokowałam JPA w pom.xml
+
+Zerwanie połączenia z serwerem to crl +
+Wyczyszczenie terminala to clear
+
