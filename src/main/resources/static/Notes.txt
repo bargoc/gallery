@@ -1,3 +1,6 @@
+zaczynam od: https://www.udemy.com/course/spring-boot-thymeleaf-course/learn/lecture/33956686#overview
+
+
 basia@MacBook-Pro-Basia ~ % cd /usr/local/mysql-8.0.23-macos10.15-x86_64/bin 
 basia@MacBook-Pro-Basia bin % ./mysql -u root -p
 mysql> create database hanka;

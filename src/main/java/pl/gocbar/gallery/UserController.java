@@ -3,9 +3,8 @@ package pl.gocbar.gallery;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-
-
 import pl.gocbar.gallery.model.User;
+
 
 
 @Controller
@@ -26,4 +25,11 @@ public class UserController {
         model.addAttribute("user", user);
         return "selection-expression";
     }
+
+    //http://localhost:8080/message-expression
+    @GetMapping("message-expression")
+    public String messageExpression() {
+        return "message-expression";
+    }
+    
 }
