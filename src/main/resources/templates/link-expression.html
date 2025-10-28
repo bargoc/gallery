@@ -1,0 +1,15 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>  
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Link Expressions</title>
+<link  th:href="@{/css/gocbarStyle.css}" rel="stylesheet"/>
+</head>
+<body>
+    <h1>Link Expression Demo:</h1>
+    <a th:href="@{/variable-expression}">variable expression</a>
+    <a th:href="@{/selection-expression}">selection expression</a>
+    <p><a th:href="@{link-expression/{id}(id=${id})}">link with parameter</a></p>
+</div>
+</body>
+</html>
