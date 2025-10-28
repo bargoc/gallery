@@ -11,10 +11,19 @@ import pl.gocbar.gallery.model.User;
 @Controller
 public class UserController {
     
+    //http://localhost:8080/variable-expression
     @GetMapping("variable-expression")
     public String variableExpression(Model model) {
         User user = new User("Ewa",  "ewka@gmail.com", "Admin", "femine");
         model.addAttribute("user", user);
         return "variable-expression";
+    }
+
+    //http://localhost:8080/selection-expression
+    @GetMapping("selection-expression")
+    public String selectionExpression(Model model) {
+        User user = new User("Ewa",  "ewka@gmail.com", "Admin", "femine");
+        model.addAttribute("user", user);
+        return "selection-expression";
     }
 }
