@@ -1,0 +1,20 @@
+package pl.gocbar.gallery;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+
+
+import pl.gocbar.gallery.model.User;
+
+
+@Controller
+public class UserController {
+    
+    @GetMapping("variable-expression")
+    public String variableExpression(Model model) {
+        User user = new User("Ewa",  "ewka@gmail.com", "Admin", "femine");
+        model.addAttribute("user", user);
+        return "variable-expression";
+    }
+}

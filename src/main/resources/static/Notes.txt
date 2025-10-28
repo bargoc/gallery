@@ -20,6 +20,8 @@ basia@MacBook-Pro-Basia gallery % git remote add origin
 basia@MacBook-Pro-Basia gallery % git push -u origin main
 Zadziałało bezbłędnie.
 
+Po dodaniu klasy User
+http://localhost:8080/variable-expression 
 
 
 
