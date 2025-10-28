@@ -1,0 +1,14 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>  
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Fragment Expressions</title>
+<link  th:href="@{/css/gocbarStyle.css}" rel="stylesheet"/>
+</head>
+<body>
+    <h1>Fragment Expression Demo:</h1>
+    <div th:replace="~{common/header :: header}"></div>
+    <div><h1>Tu umieszczam zawartość strony</h1></div>    
+    <div th:replace="~{common/footer :: footer}"></div>
+</body>
+</html>
