@@ -1,0 +1,34 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>  
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Users - iteracja</title>
+<link  th:href="@{/css/gocbarStyle.css}" rel="stylesheet"/>
+</head>
+<body>
+    <h1>Users Iteration Demo:</h1>
+    <div th:replace="~{common/header :: header}"></div>
+    <div>
+        <h1>Tu umieszczam zawartość strony</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Name:</th>
+                <th>Email</th>
+                <th>Role</th>
+                <th>Gender</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="user : ${usersList}">
+                <td th:text="${user.name}"></td>
+                <td th:text="${user.email}"></td>
+                <td th:text="${user.role}"></td>
+                <td th:text="${user.gender}"></td>
+            </tr>
+        </tbody>
+    </table>
+    </div>    
+    <div th:replace="~{common/footer :: footer}"></div>
+</body>
+</html>
