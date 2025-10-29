@@ -2,35 +2,33 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>  
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Users - iteracja</title>
+<title>If - unless</title>
 <link  th:href="@{/css/gocbarStyle.css}" rel="stylesheet"/>
 </head>
 <body>
-    <h1>Users Iteration Demo:</h1>
+    <h1>If - unless Demo:</h1>
     <div th:replace="~{common/header :: header}"></div>
     <div>
         <h1>Tu umieszczam zawartość strony</h1>
     <table border="1">
         <thead>
             <tr>
-                <th>SR. No</th>
-                <th>Index</th>
-                <th>Even</th>
                 <th>Name:</th>
                 <th>Email</th>
                 <th>Role</th>
-                <th>Gender</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
-            <tr th:each="user, userStat : ${usersList}">
-                <td th:text="${userStat.count}"></td>
-                <td th:text="${userStat.index}"></td>
-                <td th:text="${userStat.even}"></td>
+            <tr th:each="user : ${usersList}">
                 <td th:text="${user.name}"></td>
                 <td th:text="${user.email}"></td>
                 <td th:text="${user.role}"></td>
-                <td th:text="${user.gender}"></td>
+                <td>
+                    <a th:href="@{/update}" th:if="${user.role} == 'ADMIN'">Update</a>
+                    <a th:href="@{/delete}" th:if="${user.role} == 'ADMIN'">Delete</a>
+                    <a th:href="@{/view}" th:unless="${user.role} == 'ADMIN'">View</a>
+                </td>
             </tr>
         </tbody>
     </table>
