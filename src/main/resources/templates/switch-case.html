@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>  
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Switch-case</title>
+<link  th:href="@{/css/gocbarStyle.css}" rel="stylesheet"/>
+</head>
+<body>
+    <h1>Switch case Demo:</h1>
+    <div th:replace="~{common/header :: header}"></div>
+   
+    <h3 th:text="${user.name}"></h3> 
+    <div th:switch="${user.role}">
+        <p th:case="'ADMIN'">User is an Admin</p>
+        <p th:case="'USER'">User is an oridinary User</p>
+        <p th:case="*">User is a something else</p>
+    </div>
+      
+    <div th:replace="~{common/footer :: footer}"></div>
+</body>
+</html>
