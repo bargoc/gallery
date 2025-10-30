@@ -83,4 +83,6 @@ public class UserController {
     	model.addAttribute("user", user);
         return "switch-case";
     }
+
+    
 }
