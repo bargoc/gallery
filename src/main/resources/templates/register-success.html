@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>  
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>User Registered Data</title>
+<link  th:href="@{/css/gocbarStyle.css}" rel="stylesheet"/>
+</head>
+<body>
+    <div th:replace="~{common/header :: header}"></div>
+    <h1>Registered User Information</h1>
+    <div>
+        <p>Name: <strong th:text="${userForm.name}"></strong></p>
+        <p>Email: <strong th:text="${userForm.email}"></strong></p>
+        <p>Password: <strong th:text="${userForm.password}"></strong></p>
+        <p>Gender: <strong th:text="${userForm.gender}"></strong></p>
+        <p>Address: <strong th:text="${userForm.address}"></strong></p>
+        <p>Married: <strong th:text="${userForm.married}"></strong></p>
+        <p>Profession: <strong th:text="${userForm.profession}"></strong></p>
+    </div>    
+    <div th:replace="~{common/footer :: footer}"></div>
+</body>
+</html>
