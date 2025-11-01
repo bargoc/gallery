@@ -30,7 +30,7 @@ http://localhost:8080/selection-express
 
 http://localhost:8080/register
 
-
+Po wstępnych przypomnieniach pobieram aplikacje z GitHuba i umieszczam w Zapasy.
 
 
 
