@@ -1,0 +1,11 @@
+package pl.gocbar.gallery.service;
+
+import java.util.List;
+
+import pl.gocbar.gallery.dto.PostDto;
+
+public interface PostService {
+    
+    List<PostDto> findAllPost();
+     
+}

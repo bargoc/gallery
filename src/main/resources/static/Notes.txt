@@ -32,6 +32,16 @@ http://localhost:8080/register
 
 Po wstępnych przypomnieniach pobieram aplikacje z GitHuba i umieszczam w Zapasy.
 
+http://localhost:8080/admin/posts 
+
+<tr th:each="post, postStat : ${posts}">
+        <td th:text="${postStats.count}">1</td>
+        <td th:text="${post.title}">post title</td>
+        <td th:text="${post.shortDescriptionpost short description}"></td>
+        <td th:text="${post.createdOn}">post created date</td>
+</tr>
+
+
 
 
 
