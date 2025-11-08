@@ -2,12 +2,17 @@ package pl.gocbar.gallery.dto;
 
 import java.time.LocalDateTime;
 
+import jakarta.validation.constraints.NotEmpty;
+
 public class PostDto {
-    
+
     private Long id;
+    @NotEmpty(message = "Post title should not be empty")
     private String title;
     private String url;
+    @NotEmpty(message = "Post content should not be empty")
     private String content;
+    @NotEmpty(message = "Post short description should not be empty")
     private String shortDescription;
     private LocalDateTime createdOn;
     private LocalDateTime updatedOn;
@@ -81,6 +86,4 @@ public class PostDto {
     public void setUpdatedOn(LocalDateTime updatedOn) {
         this.updatedOn = updatedOn;
     }
-
-    
 }

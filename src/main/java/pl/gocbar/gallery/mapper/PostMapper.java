@@ -8,7 +8,7 @@ public class PostMapper {
     // Map Post to PostDto
     public static PostDto mapToPostDto(Post post) {
         PostDto postDto = new PostDto(post.getId(), post.getTitle(), post.getUrl(), post.getContent(),
-                post.getShortDescription(), post.getCreatedOn(), post.getUpdatedOn());
+                post.getShortDescription(), post.getCreatedOn(), post.getUpdatedOn()); 
         return postDto;
     }
 
