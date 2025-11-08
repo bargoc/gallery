@@ -10,6 +10,7 @@ import pl.gocbar.gallery.entity.Post;
 import pl.gocbar.gallery.mapper.PostMapper;
 import pl.gocbar.gallery.repository.PostRepository;
 import pl.gocbar.gallery.service.PostService;
+
 @Service
 public class PostServiceImpl implements PostService {
 
