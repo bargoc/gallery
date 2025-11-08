@@ -7,6 +7,8 @@ import pl.gocbar.gallery.entity.Post;
 
 public interface PostService {
     
-    //List<PostDto> findAllPost();
-    List<Post> findAllPost(); 
+    List<PostDto> findAllPost();
+   // List<Post> findAllPost(); 
+
+   void createPost(PostDto postDto);
 }

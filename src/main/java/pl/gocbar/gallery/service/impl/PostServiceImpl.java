@@ -21,14 +21,20 @@ private PostRepository postRepository;
 }
 
     @Override
-    /* public List<PostDto> findAllPost() {
+   public List<PostDto> findAllPost() {
        List<Post> posts = postRepository.findAll();
        return posts.stream().map(PostMapper :: mapToPostDto).collect(Collectors.toList());
-    } */
+    } 
     
-    public List<Post> findAllPost() {
+    @Override
+    public void createPost(PostDto postDto) {
+        Post post = PostMapper.mapToPost(postDto);
+        postRepository.save(post);
+    }
+
+    /* public List<Post> findAllPost() {
         List<Post> posts = postRepository.findAll();
         return posts;
         //posts.stream().map(PostMapper :: mapToPostDto).collect(Collectors.toList());
-     }
+     } */
 }
