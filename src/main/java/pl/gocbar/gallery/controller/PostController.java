@@ -9,6 +9,7 @@ import pl.gocbar.gallery.dto.PostDto;
 import pl.gocbar.gallery.service.PostService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import jakarta.validation.Valid;
@@ -41,9 +42,9 @@ public class PostController {
 
     @PostMapping("/admin/posts")
     public String createPost(@Valid @ModelAttribute("post") PostDto postDto,
-                             BindingResult result,
-                             Model model){
-        if(result.hasErrors()){
+            BindingResult result,
+            Model model) {
+        if (result.hasErrors()) {
             model.addAttribute("post", postDto);
             return "admin/create_post";
         }
@@ -52,7 +53,23 @@ public class PostController {
         return "redirect:/admin/posts";
     }
 
-    private static String getUrl(String postTitle){
+   /*  @GetMapping("/admin/posts/{postId}/edit")
+    public String editPostForm(@PathVariable("postId") Long postId, Model model) {
+        PostDto postDto = postService.findPostById(postId);
+        model.addAttribute("post", postDto);
+        return "admin/edit_post";
+    } */
+
+    @GetMapping("/admin/posts/{postId}/edit")
+    public String editPostForm(@PathVariable("postId") Long postId,
+                               Model model){
+
+        PostDto postDto = postService.findPostById(postId);
+        model.addAttribute("post", postDto);
+        return "admin/edit_post";
+    }
+    
+    private static String getUrl(String postTitle) {
         // OOPS Concepts Explained in Java
         // oops-concepts-explained-in-java
         String title = postTitle.trim().toLowerCase();

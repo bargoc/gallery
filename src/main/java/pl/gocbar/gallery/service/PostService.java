@@ -5,9 +5,10 @@ import java.util.List;
 import pl.gocbar.gallery.dto.PostDto;
 
 public interface PostService {
-    
-    List<PostDto> findAllPost();
-   // List<Post> findAllPost(); 
 
-   void createPost(PostDto postDto);
+    List<PostDto> findAllPost();
+
+    void createPost(PostDto postDto);
+
+    PostDto findPostById(Long postId);
 }
