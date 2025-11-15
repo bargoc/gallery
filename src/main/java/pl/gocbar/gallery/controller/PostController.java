@@ -53,22 +53,27 @@ public class PostController {
         return "redirect:/admin/posts";
     }
 
-   /*  @GetMapping("/admin/posts/{postId}/edit")
-    public String editPostForm(@PathVariable("postId") Long postId, Model model) {
-        PostDto postDto = postService.findPostById(postId);
-        model.addAttribute("post", postDto);
-        return "admin/edit_post";
-    } */
-
     @GetMapping("/admin/posts/{postId}/edit")
-    public String editPostForm(@PathVariable("postId") Long postId,
-                               Model model){
+    public String editPostForm(@PathVariable("postId") Long postId, Model model) {
 
         PostDto postDto = postService.findPostById(postId);
         model.addAttribute("post", postDto);
         return "admin/edit_post";
     }
-    
+
+    @PostMapping("/admin/posts/{postId}")
+    public String updatePostForm(@PathVariable("postId") Long postId,
+            @Valid @ModelAttribute("post") PostDto post, 
+            BindingResult result, Model model) {
+        if (result.hasErrors()) {
+            model.addAttribute("post", post);
+            return "admin/edit_post";
+        }      
+        post.setId(postId);  
+        postService.createPost(post);
+        return "redirect:/admin/posts";
+    }
+
     private static String getUrl(String postTitle) {
         // OOPS Concepts Explained in Java
         // oops-concepts-explained-in-java
