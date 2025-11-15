@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<div th:replace="admin/header :: header"></div>
+
+<body>
+  <div th:replace="admin/header :: navbar"></div>
+  <br /><br />
+
+
+  <div class="container">
+    <div class="row ">
+      <div class="row col-md-8 offset-md-2">
+        <h2 th:text="${post.title}"></h2>
+        <hr/>
+        <h4 th:text="${post.shortDescription}"></h4>
+        <hr/>
+        <div th:utext="${post.content}">
+
+        </div>
+      </div>
+</div>
+    
+
+
+  <br /><br /><br /><br /><br /><br />
+  <div th:replace="admin/footer :: footer"></div>
+  
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.ckeditor.com/ckeditor5/34.2.0/classic/ckeditor.js"></script>
+  <script>
+    ClassicEditor
+      .create(document.querySelector('#content'))
+      .then(editor => {
+        console.log(editor);
+      })
+      .catch(error => {
+        console.error(error);
+      });
+  </script>
+
+</body>
+
+</html>

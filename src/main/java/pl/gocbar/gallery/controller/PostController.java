@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import jakarta.validation.Valid;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class PostController {
@@ -63,22 +64,30 @@ public class PostController {
 
     @PostMapping("/admin/posts/{postId}")
     public String updatePostForm(@PathVariable("postId") Long postId,
-            @Valid @ModelAttribute("post") PostDto post, 
+            @Valid @ModelAttribute("post") PostDto post,
             BindingResult result, Model model) {
 
         if (result.hasErrors()) {
             model.addAttribute("post", post);
             return "admin/edit_post";
-        }      
-        post.setId(postId);  
+        }
+        post.setId(postId);
         postService.createPost(post);
         return "redirect:/admin/posts";
     }
 
     @GetMapping("/admin/posts/{postId}/delete")
-    public String deletePost(@PathVariable("postId") Long postId) {                 
-            postService.deletePost(postId);       
+    public String deletePost(@PathVariable("postId") Long postId) {
+        postService.deletePost(postId);
         return "redirect:/admin/posts";
+    }
+
+    @GetMapping("/admin/posts/{postUrl}/view")
+    public String viewPost(@PathVariable("postUrl") String postUrl, Model model) {
+
+        PostDto postDto = postService.findPostByUrl(postUrl);
+        model.addAttribute("post", postDto);
+        return "admin/view_post";
     }
 
     private static String getUrl(String postTitle) {
