@@ -65,12 +65,19 @@ public class PostController {
     public String updatePostForm(@PathVariable("postId") Long postId,
             @Valid @ModelAttribute("post") PostDto post, 
             BindingResult result, Model model) {
+
         if (result.hasErrors()) {
             model.addAttribute("post", post);
             return "admin/edit_post";
         }      
         post.setId(postId);  
         postService.createPost(post);
+        return "redirect:/admin/posts";
+    }
+
+    @GetMapping("/admin/posts/{postId}/delete")
+    public String deletePost(@PathVariable("postId") Long postId) {                 
+            postService.deletePost(postId);       
         return "redirect:/admin/posts";
     }
 
