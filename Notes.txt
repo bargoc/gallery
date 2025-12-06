@@ -1,0 +1,4 @@
+Ten komponent edytor działa niepoprawnie. Poszukac innego!
+
+https://ckeditor.com/docs/ckeditor5/latest/getting-started/installation/self-hosted/spring-boot.html 
+Nie pobrałam klucza licencji!!

@@ -43,9 +43,9 @@ public class PostController {
 
     @PostMapping("/admin/posts")
     public String createPost(@Valid @ModelAttribute("post") PostDto postDto,
-            BindingResult result,
-            Model model) {
-        if (result.hasErrors()) {
+                             BindingResult result,
+                             Model model){
+        if(result.hasErrors()){
             model.addAttribute("post", postDto);
             return "admin/create_post";
         }
